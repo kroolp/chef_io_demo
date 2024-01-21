@@ -9,9 +9,10 @@
 
 
 ## Ignore Chef related files and secrets
-.chef
 .chef/*.pem
 .chef/encrypted_data_bag_secret
+.chef/chef_guid
+.chef/syntaxcache
 
 ## Ignore Chef-Zero files
 clients
@@ -29,7 +30,7 @@ nodes
 
 # ##Chef
 # .kitchen/
-# .vagrant
+.vagrant
 # nodes
 # metadata.json
 
@@ -122,3 +123,5 @@ nodes
 
 # ## Office Temp Files
 # ~$*
+
+.vscode
