@@ -12,21 +12,33 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define "node_1" do |app|
+  config.vm.define "load_balancer" do |app|
     app.vm.box = "ubuntu/focal64"
     app.vm.network :private_network, ip: "10.0.0.102"
     app.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
   end
 
-  config.vm.define "node_2" do |app|
+  config.vm.define "webserver_1" do |app|
     app.vm.box = "ubuntu/focal64"
     app.vm.network :private_network, ip: "10.0.0.103"
     app.vm.network :forwarded_port, guest: 22, host: 2223, id: 'ssh'
   end
 
+  config.vm.define "webserver_2" do |app|
+    app.vm.box = "ubuntu/focal64"
+    app.vm.network :private_network, ip: "10.0.0.104"
+    app.vm.network :forwarded_port, guest: 22, host: 2224, id: 'ssh'
+  end
+
+  config.vm.define "database" do |app|
+    app.vm.box = "ubuntu/focal64"
+    app.vm.network :private_network, ip: "10.0.0.105"
+    app.vm.network :forwarded_port, guest: 22, host: 2225, id: 'ssh'
+  end
+
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
-    vb.memory = "2048"
+    vb.memory = "1024"
     vb.cpus = 1
   end
 end
