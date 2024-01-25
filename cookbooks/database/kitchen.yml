@@ -24,9 +24,6 @@ platforms:
   - name: ubuntu-20.04
     driver:
       image: dokken/ubuntu-20.04
-    # driver_config:
-    #   network:
-    #     - ["forwarded_port", {guest: 80, host: 8000}]
 
 suites:
   - name: default
