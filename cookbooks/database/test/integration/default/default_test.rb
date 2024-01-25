@@ -1,3 +1,3 @@
-describe file('/database.txt') do
-  its('content') { is_expected.to include('port: 1234') }
+describe bash('psql --version') do
+  its('stdout') { is_expected.to include '12.17' }
 end

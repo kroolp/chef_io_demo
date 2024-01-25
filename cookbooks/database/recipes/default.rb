@@ -1,3 +1,4 @@
-file 'database.txt' do
-  content "This is the example of the db with port: #{node['db_port']}"
+postgresql_install 'postgresql' do
+  source :os
+  action %i(install init_server)
 end
