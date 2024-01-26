@@ -29,6 +29,8 @@ suites:
   - name: default
     provisioner:
       policyfile: Policyfile.rb
+      network:
+        - ["forwarded_port", {guest: 5432, host: 4001}]
     verifier:
       inspec_tests:
         - test/integration/default
