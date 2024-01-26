@@ -1,0 +1,141 @@
+{
+  "revision_id": "6b7566164172483d6751a0506d275930264cbcc0741f3aec054212e3f45c1ed5",
+  "name": "webserver",
+  "run_list": [
+    "recipe[nginx_server::default]",
+    "recipe[ruby::default]",
+    "recipe[rails_app::default]"
+  ],
+  "included_policy_locks": [
+    {
+      "name": "nginx_server",
+      "revision_id": "ddb1c2eebfc3589ba8b9c821110dd10b79a4fb4778ed80e7a350ebee4b00d110",
+      "source_options": {
+        "path": "/Users/piotrkrol/projects/chef_io_demo/cookbooks/nginx_server/Policyfile.lock.json"
+      }
+    },
+    {
+      "name": "rails_app",
+      "revision_id": "d78d0d86e264c7a1ce29bc3c04d490eb33e7ffa0a385f561feedb4a2fdaa57ab",
+      "source_options": {
+        "path": "/Users/piotrkrol/projects/chef_io_demo/cookbooks/rails_app/Policyfile.lock.json"
+      }
+    }
+  ],
+  "cookbook_locks": {
+    "nginx": {
+      "version": "12.2.7",
+      "identifier": "3264d3eb9a33e6ce9febf91dd25e82bfb0f7a290",
+      "dotted_decimal_identifier": "14184610189161446.58159681048007262.143759819383440",
+      "cache_key": "nginx-12.2.7-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/nginx/versions/12.2.7/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/nginx/versions/12.2.7/download",
+        "version": "12.2.7"
+      }
+    },
+    "nginx_server": {
+      "version": "0.1.0",
+      "identifier": "e54a38c0ccc31a758b9428ceb9d3d1a865f5d0aa",
+      "dotted_decimal_identifier": "64539377280008986.33086040731204051.230521195319466",
+      "source": "../cookbooks/nginx_server",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/nginx_server"
+      }
+    },
+    "rails_app": {
+      "version": "0.1.0",
+      "identifier": "40909443c410cae4b6ba6cdf4504f96f14a3a94c",
+      "dotted_decimal_identifier": "18173364975964362.64377206496773380.274255482956108",
+      "source": "../cookbooks/rails_app",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/rails_app"
+      }
+    },
+    "ruby": {
+      "version": "0.1.0",
+      "identifier": "74c9c2f7ccc3bb7c13b6bb9cb7c4cb0e3690fa85",
+      "dotted_decimal_identifier": "32872936516666299.34924572664707012.223261905451653",
+      "source": "../cookbooks/ruby",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/ruby"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "nginx",
+        "= 12.2.7"
+      ],
+      [
+        "nginx_server",
+        "= 0.1.0"
+      ],
+      [
+        "rails_app",
+        "= 0.1.0"
+      ],
+      [
+        "ruby",
+        "= 0.1.0"
+      ]
+    ],
+    "dependencies": {
+      "nginx (12.2.7)": [
+
+      ],
+      "nginx_server (0.1.0)": [
+        [
+          "nginx",
+          "~> 12.2.7"
+        ]
+      ],
+      "rails_app (0.1.0)": [
+
+      ],
+      "ruby (0.1.0)": [
+
+      ]
+    }
+  }
+}

@@ -6,6 +6,12 @@ driver:
 ## via localhost on the host.
 ## see also: https://www.vagrantup.com/docs/networking/forwarded_ports
 
+driver_config:
+  network:
+  - ["forwarded_port", {guest: 80, host: 8080}]
+  customize:
+    memory: 1024
+
 provisioner:
   name: chef_zero
   log_level: debug
@@ -20,14 +26,8 @@ verifier:
 
 platforms:
   - name: ubuntu-20.04
-    driver_config:
-      network:
-        - ["forwarded_port", {guest: 80, host: 8000}]
 
 suites:
   - name: default
     provisioner:
-      policyfile: Policyfile.rb
-    verifier:
-      inspec_tests:
-        - test/integration/default
+      policyfile: policyfiles/webserver.rb
