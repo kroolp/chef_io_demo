@@ -4,16 +4,14 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-root_dir = Dir.pwd
-
-name 'webserver'
+name 'nginx_server'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
-include_policy 'nginx_server', path: "#{root_dir}/cookbooks/nginx_server/policyfiles/default.lock.json"
-include_policy 'rails_app', path: "#{root_dir}/cookbooks/rails_app/Policyfile.lock.json"
-
 # run_list: chef-client will run these recipes in the order specified.
-run_list ['nginx_server::default', 'rails_app::default']
+run_list 'nginx_server::default'
 
+# Specify a custom source for a single cookbook:
+cookbook 'nginx_server', path: '..'
+cookbook 'nginx', '~> 12.2.7', :supermarket

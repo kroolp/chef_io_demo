@@ -19,7 +19,7 @@ execute 'RAILS_ENV=production bin/rails assets:precompile' do
   cwd '/app'
 end
 
-execute 'RAILS_ENV=production bin/rails server --daemon' do
+execute "RAILS_ENV=production SERVER_HOST=\"#{node['host']}\" bin/rails server --daemon" do
   cwd '/app'
 end
   

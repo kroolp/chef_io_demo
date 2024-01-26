@@ -26,6 +26,26 @@ platforms:
 
 suites:
   - name: default
+    provisioner:
+      policyfile_path: policyfiles/default.rb
+    driver:
+      network:
+        - ['private_network', {ip: '10.0.0.111'}]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+  
+  - name: load-balancer
+    provisioner:
+      policyfile_path: policyfiles/load_balancer.rb
+    driver:
+      network:
+        - ['private_network', {ip: '10.0.0.112'}]
+    attributes:
+      webservers:
+        - example1.com
+        - example2.com
+        - example3.com
     verifier:
       inspec_tests:
         - test/integration/default

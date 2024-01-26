@@ -18,14 +18,14 @@ Vagrant.configure("2") do |config|
     app.vm.network :forwarded_port, guest: 22, host: 2222
   end
 
-  config.vm.define "webserver_1" do |app|
+  config.vm.define "webserver1" do |app|
     app.vm.box = "ubuntu/focal64"
     app.vm.network :private_network, ip: "10.0.0.103"
     app.vm.network :forwarded_port, guest: 22, host: 2223
     app.vm.network :forwarded_port, guest: 80, host: 8080
   end
 
-  config.vm.define "webserver_2" do |app|
+  config.vm.define "webserver2" do |app|
     app.vm.box = "ubuntu/focal64"
     app.vm.network :private_network, ip: "10.0.0.104"
     app.vm.network :forwarded_port, guest: 22, host: 2224

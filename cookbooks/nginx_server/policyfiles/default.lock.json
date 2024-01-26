@@ -1,0 +1,72 @@
+{
+  "revision_id": "11a6fac6f43afae1b895404727f4298c173adb6eb11a47170f2e992591e1c24a",
+  "name": "nginx_server",
+  "run_list": [
+    "recipe[nginx_server::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "nginx": {
+      "version": "12.2.7",
+      "identifier": "3264d3eb9a33e6ce9febf91dd25e82bfb0f7a290",
+      "dotted_decimal_identifier": "14184610189161446.58159681048007262.143759819383440",
+      "cache_key": "nginx-12.2.7-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/nginx/versions/12.2.7/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/nginx/versions/12.2.7/download",
+        "version": "12.2.7"
+      }
+    },
+    "nginx_server": {
+      "version": "0.1.0",
+      "identifier": "2fa9221e245fcb69c9474f286868c0080dad0ffb",
+      "dotted_decimal_identifier": "13415287905083339.29776180662528104.211140821716987",
+      "source": "..",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "4331b331933de3b2c237c658abb9902b019a2e57",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": ".."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "nginx",
+        "= 12.2.7"
+      ],
+      [
+        "nginx_server",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "nginx (12.2.7)": [
+
+      ],
+      "nginx_server (0.1.0)": [
+        [
+          "nginx",
+          "~> 12.2.7"
+        ]
+      ]
+    }
+  }
+}

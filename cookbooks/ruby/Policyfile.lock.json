@@ -1,0 +1,51 @@
+{
+  "revision_id": "b5b3291097c73389f5f1ef95bb7829be40294401ede7366751dc90a29606b701",
+  "name": "ruby",
+  "run_list": [
+    "recipe[ruby::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "ruby": {
+      "version": "0.1.0",
+      "identifier": "74c9c2f7ccc3bb7c13b6bb9cb7c4cb0e3690fa85",
+      "dotted_decimal_identifier": "32872936516666299.34924572664707012.223261905451653",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "ruby",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "ruby (0.1.0)": [
+
+      ]
+    }
+  }
+}

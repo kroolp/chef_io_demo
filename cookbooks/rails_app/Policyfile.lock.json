@@ -1,0 +1,79 @@
+{
+  "revision_id": "d78d0d86e264c7a1ce29bc3c04d490eb33e7ffa0a385f561feedb4a2fdaa57ab",
+  "name": "rails_app",
+  "run_list": [
+    "recipe[ruby::default]",
+    "recipe[rails_app::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "rails_app": {
+      "version": "0.1.0",
+      "identifier": "40909443c410cae4b6ba6cdf4504f96f14a3a94c",
+      "dotted_decimal_identifier": "18173364975964362.64377206496773380.274255482956108",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "ruby": {
+      "version": "0.1.0",
+      "identifier": "74c9c2f7ccc3bb7c13b6bb9cb7c4cb0e3690fa85",
+      "dotted_decimal_identifier": "32872936516666299.34924572664707012.223261905451653",
+      "source": "../ruby",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "../ruby"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "rails_app",
+        ">= 0.0.0"
+      ],
+      [
+        "ruby",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "rails_app (0.1.0)": [
+
+      ],
+      "ruby (0.1.0)": [
+
+      ]
+    }
+  }
+}

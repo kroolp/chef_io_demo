@@ -6,12 +6,6 @@ driver:
 ## via localhost on the host.
 ## see also: https://www.vagrantup.com/docs/networking/forwarded_ports
 
-driver_config:
-  network:
-  - ["forwarded_port", {guest: 80, host: 8080}]
-  customize:
-    memory: 1024
-
 provisioner:
   name: chef_zero
   log_level: debug
@@ -28,6 +22,51 @@ platforms:
   - name: ubuntu-20.04
 
 suites:
-  - name: default
+  - name: load-balancer
     provisioner:
-      policyfile: policyfiles/webserver.rb
+      policyfile_path: cookbooks/nginx_server/policyfiles/load_balancer.rb
+    driver:
+      network:
+        - ['private_network', {ip: '10.0.0.101'}]
+        - ['forwarded_port', {guest: 80, host: 8080}]
+      customize:
+        memory: 512
+    attributes:
+      webservers:
+        - '10.0.0.102'
+        - '10.0.0.103'
+    verifier:
+      inspec_tests:
+        - cookbooks/nginx_server/test/integration/default
+
+  - name: webserver1
+    provisioner:
+      policyfile_path: policyfiles/webserver.rb
+    driver:
+      network:
+        - ['private_network', {ip: '10.0.0.102'}]
+      customize:
+        memory: 1024
+    attributes:
+      host: '10.0.0.102'
+    verifier:
+      inspec_tests:
+        - cookbooks/ruby/test/integration/default
+        - cookbooks/rails_app/test/integration/default
+        - cookbooks/nginx_server/test/integration/default
+
+  - name: webserver2
+    provisioner:
+      policyfile_path: policyfiles/webserver.rb
+    driver:
+      network:
+        - ['private_network', {ip: '10.0.0.103'}]
+      customize:
+        memory: 1024
+    attributes:
+      host: '10.0.0.103'
+    verifier:
+      inspec_tests:
+        - cookbooks/ruby/test/integration/default
+        - cookbooks/rails_app/test/integration/default
+        - cookbooks/nginx_server/test/integration/default

@@ -4,14 +4,14 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'nginx_server'
+name 'load_balancer'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'nginx_server::default'
+run_list 'nginx_server::load_balancer'
 
 # Specify a custom source for a single cookbook:
-cookbook 'nginx_server', path: '.'
+cookbook 'nginx_server', path: '..'
 cookbook 'nginx', '~> 12.2.7', :supermarket

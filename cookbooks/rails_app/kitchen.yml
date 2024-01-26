@@ -26,6 +26,8 @@ platforms:
 
 suites:
   - name: default
+    attributes:
+      host: test.example.com
     verifier:
       inspec_tests:
         - test/integration/default
