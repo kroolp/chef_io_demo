@@ -82,6 +82,9 @@ Open in the browser below URL to see the Rails app running.
 
 http://localhost:8080
 
+<img width="1207" alt="Screenshot 2024-01-28 at 00 22 02" src="https://github.com/kroolp/chef_io_demo/assets/10959677/8fe15ae2-15d6-4082-b293-71f0ff26478c">
+
+
 Notice that load balancer provides traffic from two different IP (you can see that displayed in the top right corner).
 
 To stop machines (without destroying them):
