@@ -1,5 +1,5 @@
 {
-  "revision_id": "d78d0d86e264c7a1ce29bc3c04d490eb33e7ffa0a385f561feedb4a2fdaa57ab",
+  "revision_id": "73ad3cea55da9227ca9c6af71253f80dde2f058839cb1fd204ac71921a71dc60",
   "name": "rails_app",
   "run_list": [
     "recipe[ruby::default]",
@@ -11,18 +11,18 @@
   "cookbook_locks": {
     "rails_app": {
       "version": "0.1.0",
-      "identifier": "40909443c410cae4b6ba6cdf4504f96f14a3a94c",
-      "dotted_decimal_identifier": "18173364975964362.64377206496773380.274255482956108",
+      "identifier": "b18d1e5b5cdf5b5fd198f8c2be50c54cd624d71e",
+      "dotted_decimal_identifier": "49976232399134555.26970577726258768.216933800924958",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/main"
+          "origin/database-config"
         ]
       },
       "source_options": {
@@ -31,18 +31,18 @@
     },
     "ruby": {
       "version": "0.1.0",
-      "identifier": "74c9c2f7ccc3bb7c13b6bb9cb7c4cb0e3690fa85",
-      "dotted_decimal_identifier": "32872936516666299.34924572664707012.223261905451653",
+      "identifier": "a0b302c9dc9e7187af552d707bf264de28592571",
+      "dotted_decimal_identifier": "45232820831690353.38191902225366002.110905322448241",
       "source": "../ruby",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "d4b8ea1245916763b2d660412ae7920061d3aa49",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/main"
+          "origin/database-config"
         ]
       },
       "source_options": {

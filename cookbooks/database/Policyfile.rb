@@ -14,6 +14,7 @@ run_list 'database::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'database', path: '.'
+cookbook 'postgresql', '~> 11.10.0'
 
 default['staging']['db_port'] = 3306
 default['production']['db_port'] = 5432

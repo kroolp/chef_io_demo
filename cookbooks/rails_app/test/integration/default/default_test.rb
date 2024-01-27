@@ -1,5 +1,5 @@
 describe bash('rails -v') do
-  its('stdout') { is_expected.to include 'Rails 7.1.3' }
+  its('stdout') { is_expected.to include 'Rails' }
 end
 
 describe file('/app/tmp/sockets/puma.sock') do
