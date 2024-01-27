@@ -1,5 +1,5 @@
 {
-  "revision_id": "ac7c2c56c479322bfbec21c6240f46628d03b7166ffc186e97b5ac46da630196",
+  "revision_id": "76f8ddd0d830df8fcb472f087ae88bef87ac39c185a5c892edf6adc128187625",
   "name": "webserver",
   "run_list": [
     "recipe[nginx_server::default]",
@@ -36,18 +36,18 @@
     },
     "nginx_server": {
       "version": "0.1.0",
-      "identifier": "5554b869143468a92d983906d4be1b7c14f36573",
-      "dotted_decimal_identifier": "24018524034053224.47619402879128766.30219741390195",
+      "identifier": "97143fba9b8837953da94cb6ca299762343d9080",
+      "dotted_decimal_identifier": "42524985429559351.42007568875702825.166448039039104",
       "source": "../cookbooks/nginx_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:kroolp/chef_io_demo.git",
-        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
+        "remote": null,
+        "revision": "36f980952c3c97e6ba2a10b459a94d32f081a29c",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/database-config"
+
         ]
       },
       "source_options": {
@@ -56,18 +56,18 @@
     },
     "rails_app": {
       "version": "0.1.0",
-      "identifier": "0223df563168f500cd9cf684f2900384464a845f",
-      "dotted_decimal_identifier": "602392084179189.226074034500240.3866649855071",
+      "identifier": "3b2f0d20ef724c19356e8b4926c31d142faba202",
+      "dotted_decimal_identifier": "16658757059572300.7095623317268163.31972536328706",
       "source": "../cookbooks/rails_app",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:kroolp/chef_io_demo.git",
-        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
+        "remote": null,
+        "revision": "36f980952c3c97e6ba2a10b459a94d32f081a29c",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/database-config"
+
         ]
       },
       "source_options": {
@@ -82,12 +82,12 @@
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:kroolp/chef_io_demo.git",
-        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
+        "remote": null,
+        "revision": "36f980952c3c97e6ba2a10b459a94d32f081a29c",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/database-config"
+
         ]
       },
       "source_options": {
