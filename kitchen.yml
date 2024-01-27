@@ -21,6 +21,14 @@ verifier:
 platforms:
   - name: ubuntu-20.04
 
+webserver_attributes: &webserver_attributes
+  app_repository: https://github.com/kroolp/rails_example_app.git
+  app_master_key: fb6e23fe35de1ea569dcb34cc340108c
+  database_host: '10.0.0.102'
+  database_name: rails_app_production
+  database_username: rails_user
+  database_password: '12345'
+
 suites:
   - name: load-balancer
     provisioner:
@@ -42,6 +50,10 @@ suites:
   - name: database
     provisioner:
       policyfile_path: cookbooks/database/Policyfile.rb
+    attributes:
+      database_username: rails_user
+      database_name: rails_app_production
+      database_password: '12345'
     driver:
       network:
         - ['private_network', {ip: '10.0.0.102'}]
@@ -60,13 +72,8 @@ suites:
       customize:
         memory: 1024
     attributes:
+      <<: *webserver_attributes
       server_host: '10.0.0.103'
-      app_repository: https://github.com/kroolp/rails_example_app.git
-      app_master_key: fb6e23fe35de1ea569dcb34cc340108c
-      database_host: '10.0.0.102'
-      database_name: 'rails_app_production'
-      database_username: 'rails_user'
-      database_password: '12345'
     verifier:
       inspec_tests:
         - cookbooks/ruby/test/integration/default
@@ -82,13 +89,8 @@ suites:
       customize:
         memory: 1024
     attributes:
+      <<: *webserver_attributes
       server_host: '10.0.0.104'
-      app_repository: https://github.com/kroolp/rails_example_app.git
-      app_master_key: fb6e23fe35de1ea569dcb34cc340108c
-      database_host: '10.0.0.102'
-      database_name: 'rails_app_production'
-      database_username: 'rails_user'
-      database_password: '12345'
     verifier:
       inspec_tests:
         - cookbooks/ruby/test/integration/default

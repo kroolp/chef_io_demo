@@ -36,20 +36,20 @@ postgresql_service 'postgresql' do
   action %i(enable start)
 end
 
-postgresql_access 'rails_user' do
+postgresql_access node['database_username'] do
   type 'host'
-  database 'rails_app_production'
-  user 'rails_user'
+  database node['database_name']
+  user node['database_username']
   address '0.0.0.0/0'
   auth_method 'md5'
 end
 
-postgresql_user 'rails_user' do
+postgresql_user node['database_username'] do
   login true
-  unencrypted_password '12345'
+  unencrypted_password node['database_password']
 end
 
-postgresql_database 'rails_app_production' do
+postgresql_database node['database_name'] do
   template 'template0'
   encoding 'utf8'
 end
