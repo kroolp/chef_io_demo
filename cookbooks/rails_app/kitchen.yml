@@ -27,7 +27,13 @@ platforms:
 suites:
   - name: default
     attributes:
-      host: test.example.com
+      create_db: true
+      server_host: test.example.com
+      database_adapter: sqlite3
+      database_name: storage/production.sqlite3
+      app_repository: https://github.com/kroolp/rails_example_app.git
+      app_master_key: fb6e23fe35de1ea569dcb34cc340108c
+
     verifier:
       inspec_tests:
         - test/integration/default

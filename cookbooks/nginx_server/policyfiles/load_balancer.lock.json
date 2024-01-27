@@ -1,5 +1,5 @@
 {
-  "revision_id": "f6761c8b3189b5a1604c1e5fcbb968a6afd9dfff2177615e333dad0b0f39bc7f",
+  "revision_id": "feab17b49435947ca32a43d8a016a85479f96795f4bcd6af67b6ace369c26e65",
   "name": "load_balancer",
   "run_list": [
     "recipe[nginx_server::load_balancer]"
@@ -21,18 +21,18 @@
     },
     "nginx_server": {
       "version": "0.1.0",
-      "identifier": "09e1b759d18e7f62e46d5b91d73550171a578d0b",
-      "dotted_decimal_identifier": "2781452392566399.27835706056496949.88060156415243",
+      "identifier": "d9bde72e0053e44f5a2307f12de7d1bc8c0bbcc5",
+      "dotted_decimal_identifier": "61288870553080804.22335629663743463.230607733636293",
       "source": "..",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "4331b331933de3b2c237c658abb9902b019a2e57",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/database-config"
         ]
       },
       "source_options": {

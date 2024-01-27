@@ -1,5 +1,5 @@
 {
-  "revision_id": "8b7f375c95cd7afa570c3fc4a1de8f5f23a2424c2eef6cdc713d4a2827ef138d",
+  "revision_id": "ac7c2c56c479322bfbec21c6240f46628d03b7166ffc186e97b5ac46da630196",
   "name": "webserver",
   "run_list": [
     "recipe[nginx_server::default]",
@@ -16,7 +16,7 @@
     },
     {
       "name": "rails_app",
-      "revision_id": "d78d0d86e264c7a1ce29bc3c04d490eb33e7ffa0a385f561feedb4a2fdaa57ab",
+      "revision_id": "73ad3cea55da9227ca9c6af71253f80dde2f058839cb1fd204ac71921a71dc60",
       "source_options": {
         "path": "/Users/piotrkrol/projects/chef_io_demo/cookbooks/rails_app/Policyfile.lock.json"
       }
@@ -36,18 +36,18 @@
     },
     "nginx_server": {
       "version": "0.1.0",
-      "identifier": "8efcdd54a7c31288776b361fa705393370dfed7b",
-      "dotted_decimal_identifier": "40247474231165714.38411899185899269.62893099838843",
+      "identifier": "5554b869143468a92d983906d4be1b7c14f36573",
+      "dotted_decimal_identifier": "24018524034053224.47619402879128766.30219741390195",
       "source": "../cookbooks/nginx_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "4331b331933de3b2c237c658abb9902b019a2e57",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/database-config"
         ]
       },
       "source_options": {
@@ -56,18 +56,18 @@
     },
     "rails_app": {
       "version": "0.1.0",
-      "identifier": "1c699073ba984cbe0d67485397192c03ccc654e8",
-      "dotted_decimal_identifier": "7997368485713996.53494982821254937.48394832073960",
+      "identifier": "0223df563168f500cd9cf684f2900384464a845f",
+      "dotted_decimal_identifier": "602392084179189.226074034500240.3866649855071",
       "source": "../cookbooks/rails_app",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "4331b331933de3b2c237c658abb9902b019a2e57",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/database-config"
         ]
       },
       "source_options": {
@@ -76,18 +76,18 @@
     },
     "ruby": {
       "version": "0.1.0",
-      "identifier": "74c9c2f7ccc3bb7c13b6bb9cb7c4cb0e3690fa85",
-      "dotted_decimal_identifier": "32872936516666299.34924572664707012.223261905451653",
+      "identifier": "a0b302c9dc9e7187af552d707bf264de28592571",
+      "dotted_decimal_identifier": "45232820831690353.38191902225366002.110905322448241",
       "source": "../cookbooks/ruby",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "4331b331933de3b2c237c658abb9902b019a2e57",
+        "remote": "git@github.com:kroolp/chef_io_demo.git",
+        "revision": "40d7c44a484f2ad7c7b370d3073eb4197835b20b",
         "working_tree_clean": false,
-        "published": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/database-config"
         ]
       },
       "source_options": {

@@ -1,5 +1,18 @@
+rails_env_variables = {
+  'RAILS_ENV' => 'production',
+  'DATABASE_ADAPTER' => node['database_adapter'],
+  'DATABASE_HOST' => node['database_host'],
+  'DATABASE_NAME' => node['database_name'],
+  'DATABASE_USERNAME' => node['database_username'],
+  'DATABASE_PASSWORD' => node['database_password'],
+  'SERVER_HOST' => node['server_host']
+}.compact
+
+package 'libpq5'
+package 'libpq-dev'
+
 git '/app' do
-  repository 'https://github.com/kroolp/rails_example_app.git'
+  repository node['app_repository']
 end
 
 execute 'bundle install' do
@@ -7,19 +20,29 @@ execute 'bundle install' do
 end
 
 file '/app/config/master.key' do
-  content 'fb6e23fe35de1ea569dcb34cc340108c'
+  content node['app_master_key']
   mode '0644'
 end
 
-execute 'RAILS_ENV=production bin/rails db:create db:migrate' do
-  cwd '/app'
+if node['create_db'] == true
+  execute 'rails db:create' do
+    cwd '/app/bin'
+    environment rails_env_variables
+  end
 end
 
-execute 'RAILS_ENV=production bin/rails assets:precompile' do
-  cwd '/app'
+execute 'rails db:migrate' do
+  cwd '/app/bin'
+  environment rails_env_variables
 end
 
-execute "RAILS_ENV=production SERVER_HOST=\"#{node['host']}\" bin/rails server --daemon" do
-  cwd '/app'
+execute 'rails assets:precompile' do
+  cwd '/app/bin'
+  environment rails_env_variables
+end
+
+execute "rails server --daemon" do
+  cwd '/app/bin'
+  environment rails_env_variables
 end
   

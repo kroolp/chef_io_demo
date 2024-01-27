@@ -1,3 +1,5 @@
+apt_update
+
 postgresql_install 'postgresql' do
   source :os
   action %i(install init_server)
@@ -23,6 +25,7 @@ postgresql_config 'postgresql-server' do
     'lc_numeric' => 'C',
     'lc_time' => 'C',
     'default_text_search_config' => 'pg_catalog.english',
+    'listen_addresses' => '*'
   })
 
   notifies :restart, 'postgresql_service[postgresql]', :delayed
@@ -33,26 +36,20 @@ postgresql_service 'postgresql' do
   action %i(enable start)
 end
 
-postgresql_access 'postgresql host superuser' do
+postgresql_access 'rails_user' do
   type 'host'
-  database 'all'
-  user 'postgres'
-  address '127.0.0.1/32'
+  database 'rails_app_production'
+  user 'rails_user'
+  address '0.0.0.0/0'
   auth_method 'md5'
 end
 
-postgresql_user 'postgres' do
+postgresql_user 'rails_user' do
+  login true
   unencrypted_password '12345'
-  action :nothing
 end
 
-postgresql_user 'sous_chef' do
-  unencrypted_password '12345'
-
-  notifies :set_password, 'postgresql_user[postgres]', :immediately
-end
-
-postgresql_database 'rails_db' do
+postgresql_database 'rails_app_production' do
   template 'template0'
   encoding 'utf8'
 end
