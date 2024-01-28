@@ -1,0 +1,9 @@
+{
+  "app_repository": "https://github.com/kroolp/rails_example_app.git",
+  "app_master_key": "fb6e23fe35de1ea569dcb34cc340108c",
+  "database_host": "10.0.0.102",
+  "database_name": "rails_app_production",
+  "database_username": "rails_user",
+  "database_password": "12345",
+  "server_host": "10.0.0.104"
+}

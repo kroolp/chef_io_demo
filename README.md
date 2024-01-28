@@ -66,16 +66,16 @@ chef push production policyfiles/webserver.lock.json
 ```
 Bootstrap nodes:
 ```
-knife bootstrap 127.0.0.1 -p 2222 -U vagrant -i .vagrant/machines/load_balancer/virtualbox/private_key -N load_balancer --node-ssl-verify-mode none --policy-group production --policy-name load_balancer --sudo
+knife bootstrap 127.0.0.1 -p 2222 -U vagrant -i .vagrant/machines/database/virtualbox/private_key -N database --node-ssl-verify-mode none --policy-group production --policy-name database --json-attribute-file ./attributes/database.json --sudo
 ```
 ```
-knife bootstrap 127.0.0.1 -p 2223 -U vagrant -i .vagrant/machines/webserver1/virtualbox/private_key -N webserver_1 --node-ssl-verify-mode none --policy-group production --policy-name webserver --sudo
+knife bootstrap 127.0.0.1 -p 2223 -U vagrant -i .vagrant/machines/load_balancer/virtualbox/private_key -N load_balancer --node-ssl-verify-mode none --policy-group production --policy-name load_balancer --json-attribute-file ./attributes/load_balancer.json --sudo
 ```
 ```
-knife bootstrap 127.0.0.1 -p 2224 -U vagrant -i .vagrant/machines/webserver2/virtualbox/private_key -N webserver2 --node-ssl-verify-mode none --policy-group production --policy-name webserver --sudo
+knife bootstrap 127.0.0.1 -p 2224 -U vagrant -i .vagrant/machines/webserver1/virtualbox/private_key -N webserver1 --node-ssl-verify-mode none --policy-group production --policy-name webserver --json-attribute-file ./attributes/webserver1.json --sudo
 ```
 ```
-knife bootstrap 127.0.0.1 -p 2225 -U vagrant -i .vagrant/machines/node_2/virtualbox/private_key -N database --node-ssl-verify-mode none --policy-group production --policy-name database --sudo
+knife bootstrap 127.0.0.1 -p 2225 -U vagrant -i .vagrant/machines/webserver2/virtualbox/private_key -N webserver2 --node-ssl-verify-mode none --policy-group production --policy-name webserver --json-attribute-file ./attributes/webserver2.json --sudo
 ```
 
 Open in the browser below URL to see the Rails app running.
@@ -83,7 +83,6 @@ Open in the browser below URL to see the Rails app running.
 http://localhost:8080
 
 <img width="1207" alt="Screenshot 2024-01-28 at 00 22 02" src="https://github.com/kroolp/chef_io_demo/assets/10959677/8fe15ae2-15d6-4082-b293-71f0ff26478c">
-
 
 Notice that load balancer provides traffic from two different IP (you can see that displayed in the top right corner).
 
